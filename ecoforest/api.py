@@ -5,10 +5,9 @@ import httpx
 
 from ecoforest.consts import (
     URL_CGI,
-    LOCAL_TIMEOUT
+    LOCAL_TIMEOUT, ANALOGUE_READINGS_MAPPINGS
 )
 from ecoforest.exceptions import EcoforestAuthenticationRequired, EcoforestConnectionError
-from ecoforest.ssl_context import NO_VERIFY_SSL_CONTEXT
 
 logging.basicConfig(level=logging.DEBUG)
 _LOGGER = logging.getLogger(__name__)
@@ -18,6 +17,10 @@ _LOGGER.setLevel(logging.DEBUG)
 
 _LOGGER.debug('init')
 
+
+def log_debug(log_string: str) -> None:
+    if _LOGGER.isEnabledFor(logging.DEBUG):
+        _LOGGER.debug(log_string)
 
 class EcoforestApi:
     """Class for communicating with an ecoforest device."""
@@ -36,17 +39,14 @@ class EcoforestApi:
         # the device use self-signed SSL certs.
         self._timeout = timeout or LOCAL_TIMEOUT
         self._client = client or httpx.AsyncClient(
-            base_url=self._host, verify=NO_VERIFY_SSL_CONTEXT
+            base_url=self._host, verify=False
         )  # nosec
 
-    @staticmethod
-    def _debug(log_string: str) -> None:
-        if _LOGGER.isEnabledFor(logging.DEBUG):
-            _LOGGER.debug(log_string)
+
 
     async def _request(self, data: dict[str, Any] | None = None) -> dict[str, str]:
         """Make a request to the device."""
-        self._debug(f"Sending POST to {URL_CGI} with data {data}")
+        log_debug(f"Sending POST to {URL_CGI} with data {data}")
 
         try:
             response = await self._client.post(
@@ -74,7 +74,7 @@ class EcoforestApi:
 
         parsed = self._parse(response.text)
 
-        self._debug(f"Received from POST with data {parsed}")
+        log_debug(f"Received from POST with data {parsed}")
 
         return parsed
 
@@ -89,7 +89,7 @@ class EcoforestApi:
     def _parse(response: str) -> dict[str, str]:
         """Parse request data and return as dictionary."""
 
-        EcoforestApi._debug(response)
+        log_debug(response)
         reply = {}
         # discard last line ?
         for l in response.split("\n")[:-1]:
@@ -104,7 +104,7 @@ class EcoforestApi:
 
         # Remove all white spaces from bad response from ecoforest ...
         reply = {x.translate({32: None}): y for x, y in reply.items()}
-        EcoforestApi._debug(f'{reply = }')
+        log_debug(f'{reply = }')
         return reply
 
 
@@ -211,6 +211,9 @@ class EcoGeo25100:
         self._translate_values(221, values, self.analogues, [
             (0, 7)
         ])
+
+        for k,v in ANALOGUE_READINGS_MAPPINGS.items():
+            log_debug(f'{k} = {self.analogues[v]}')
 
         return self.analogues
 
