@@ -7,7 +7,7 @@ from ecoforest.consts import (
     URL_CGI,
     LOCAL_TIMEOUT, ANALOGUE_READINGS_MAPPINGS
 )
-from ecoforest.exceptions import EcoforestAuthenticationRequired, EcoforestConnectionError
+from ecoforest.exceptions import EcoforestAuthenticationRequired, EcoforestConnectionError, EcoforestError
 
 logging.basicConfig(level=logging.DEBUG)
 _LOGGER = logging.getLogger(__name__)
@@ -130,6 +130,9 @@ class EcoGeo25100:
 
     async def read_translate_digitals(self) -> List[int]:
         di1 = await self.api.make_read_operation_request(self.GEO_GET_BIT, 24, 70)
+        err_value = int(di1.get('error_check', -1))
+        if err_value < 0:
+            raise EcoforestError(f"Got error value: {err_value}")
         values = self._map_digital_values(di1.get('raw_data', []))
         self._translate_values(24, values, self.digitals, [
             (0, 1), (18, 25), (35, 48), (59, 62), (69, 70)
