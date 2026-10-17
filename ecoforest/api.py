@@ -1,4 +1,6 @@
 import logging
+import asyncio
+from .registers import hp_mapping, read_requests, decode, validate_read, parse_read, signed_integer
 from http import HTTPStatus
 from typing import Any, List, Tuple
 import httpx
@@ -9,11 +11,11 @@ from ecoforest.consts import (
 )
 from ecoforest.exceptions import EcoforestAuthenticationRequired, EcoforestConnectionError, EcoforestError
 
-logging.basicConfig(level=logging.DEBUG)
+
 _LOGGER = logging.getLogger(__name__)
 
 # TODO: No more debug
-_LOGGER.setLevel(logging.DEBUG)
+
 
 _LOGGER.debug('init')
 
@@ -48,6 +50,7 @@ class EcoforestApi:
         """Make a request to the device."""
         log_debug(f"Sending POST to {URL_CGI} with data {data}")
 
+        validate_read(data)
         try:
             response = await self._client.post(
                 URL_CGI,
@@ -60,7 +63,7 @@ class EcoforestApi:
             raise EcoforestConnectionError(
                 "Timeout occurred while connecting to the device."
             ) from error
-        except httpx.HTTPError as error:
+        except httpx.HTTPStatusError as error:
             if error.response.status_code in (
                     HTTPStatus.UNAUTHORIZED,
                     HTTPStatus.FORBIDDEN,
@@ -72,7 +75,14 @@ class EcoforestApi:
                 "Error occurred while communicating with device."
             ) from error
 
-        parsed = self._parse(response.text)
+        except httpx.RequestError as error:
+            raise EcoforestConnectionError("Error connecting to device") from error
+
+        try:
+            raw = parse_read(response.text, data)
+        except ValueError as err:
+            raise EcoforestError('Invalid or rejected Ecoforest read') from err
+        parsed = {'raw_data': raw, 'dir': str(data['dir']), 'num': str(data['num']), 'error_check': '0'}
 
         log_debug(f"Received from POST with data {parsed}")
 
@@ -114,6 +124,10 @@ class EcoGeo25100:
 
     def __init__(self, api: EcoforestApi):
         self.api = api
+        self.mapping = hp_mapping()
+        self._read_lock = asyncio.Lock()
+        self.raw_values = {}
+        self.failed_reads = []
         self.digitals = [0] * 268
         self.integers = [0] * 163
         self.analogues = [0.0] * 228
@@ -156,7 +170,7 @@ class EcoGeo25100:
     def _map_integer_values(input_values: List[str]) -> List[int]:
         temp_values = [int(x, 16) for x in input_values]
         return [
-            x - 65536 if x > 32768 else x for x in temp_values
+            x - 65536 if x >= 32768 else x for x in temp_values
         ]
 
     async def read_translate_integers(self) -> List[int]:
@@ -224,3 +238,31 @@ class EcoGeo25100:
 
 
 
+
+
+    async def read_all(self):
+        """Read the complete reconciled HP schema; no writes or background polling.
+
+        Optional unsupported reads return None, not stale values or fabricated zeroes.
+        Legacy read_translate_* methods remain available for compatibility.
+        """
+        async with self._read_lock:
+            state = {1: {}, 2: {}}
+            self.failed_reads = []
+            for request in read_requests(self.mapping):
+                try:
+                    response = await self.api.make_read_operation_request(
+                        2001 if request['data_type'] == 2 else 2002,
+                        request['address'], request['length'])
+                    state[request['data_type']].update(dict(zip(
+                        range(request['address'], request['address'] + request['length']),
+                        response['raw_data'])))
+                except EcoforestAuthenticationRequired:
+                    raise
+                except (EcoforestError, httpx.RequestError):
+                    if not request['optional']:
+                        raise
+                    self.failed_reads.append(request)
+                await asyncio.sleep(0.05)
+            self.raw_values = {k: state[r['data_type']].get(r['address']) for k,r in self.mapping.items()}
+            return {k: decode(self.raw_values[k], r) for k,r in self.mapping.items()}
