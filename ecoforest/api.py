@@ -255,23 +255,29 @@ class EcoGeo25100:
             while request_index < len(requests):
                 request = requests[request_index]
                 request_index += 1
-                try:
-                    response = await self.api.make_read_operation_request(
-                        2001 if request['data_type'] == 2 else 2002,
-                        request['address'], request['length'])
-                    state[request['data_type']].update(dict(zip(
-                        range(request['address'], request['address'] + request['length']),
-                        response['raw_data'])))
-                except EcoforestAuthenticationRequired:
-                    raise
-                except (EcoforestError, httpx.RequestError):
-                    if not request['optional']:
+                attempts = 1 if request['optional'] else 3
+                for attempt in range(attempts):
+                    try:
+                        response = await self.api.make_read_operation_request(
+                            2001 if request['data_type'] == 2 else 2002,
+                            request['address'], request['length'])
+                        state[request['data_type']].update(dict(zip(
+                            range(request['address'], request['address'] + request['length']),
+                            response['raw_data'])))
+                        break
+                    except EcoforestAuthenticationRequired:
                         raise
-                    smaller = split_optional_request(request)
-                    if smaller:
-                        requests[request_index:request_index] = smaller
-                    else:
-                        self.failed_reads.append(request)
+                    except (EcoforestError, httpx.RequestError):
+                        if attempt + 1 < attempts:
+                            await asyncio.sleep(2 ** attempt)
+                        elif request['optional']:
+                            smaller = split_optional_request(request)
+                            if smaller:
+                                requests[request_index:request_index] = smaller
+                            else:
+                                self.failed_reads.append(request)
+                        else:
+                            raise
                 await asyncio.sleep(0.05)
             self.raw_values = {k: state[r['data_type']].get(r['address']) for k,r in self.mapping.items()}
             return {k: decode(self.raw_values[k], r) for k,r in self.mapping.items()}
