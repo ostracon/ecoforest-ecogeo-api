@@ -12,12 +12,12 @@ spec.loader.exec_module(r)
 class RegisterTests(unittest.TestCase):
     def test_complete_unique_named_coverage(self):
         mapping = r.hp_mapping()
-        self.assertEqual(len(mapping), 360)
-        self.assertEqual(len({(v['data_type'],v['address']) for v in mapping.values()}),360)
+        self.assertEqual(len(mapping), 475)
+        self.assertEqual(len({(v['data_type'],v['address']) for v in mapping.values()}),475)
         planned = [(q['data_type'],a) for q in r.read_requests(mapping)
                    for a in range(q['address'],q['address']+q['length'])]
         self.assertEqual(set(planned), {(v['data_type'],v['address']) for v in mapping.values()})
-        self.assertEqual(len(planned),360)
+        self.assertEqual(len(planned),475)
         self.assertTrue(all(q['length']<=64 for q in r.read_requests(mapping)))
 
     def test_guard_rejects_write_and_malformed_payloads(self):

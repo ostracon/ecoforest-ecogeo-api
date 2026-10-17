@@ -1,7 +1,7 @@
 # Read-only HP register coverage
 
-The EATM00 (ecoGEO HP) map contains 360 named readings: the 263 entries in
-Ecoforest's Modbus 2023 v02 HP tables (pp. 11–17), plus 97 settings/status fields
+The EATM00 (ecoGEO HP) map contains 475 named readings: the 263 entries in
+Ecoforest's Modbus 2023 v02 HP tables (pp. 11–17), plus 212 settings/status fields
 mapped by the installed EGW_v2.18 `gama2` web client. Domestic models retain
 their separate existing map. Do not apply domestic addresses or blanket offsets
 to the HP controller.
@@ -42,6 +42,10 @@ probes (-999.9°C) become unavailable. Coils are exposed as numeric 0/1 sensors.
 - Priority selections 5039–5043 and delay 5173 remain explicitly unvalidated.
   A zero does not establish equal priorities or disabled protection. No
   minutes-per-hour setting has been verified for this controller.
+- The 115 additional web-backed fields promoted in October 2026 were checked
+  against the existing keys, names and bank/address pairs before inclusion.
+  They remain optional and read-only; the retained proposal ledger documents
+  the 91 ambiguous references that were deliberately deferred.
 - Existing energy-counter units and annual PF scaling are not reinterpreted.
   The new energy-unit flags expose evidence for a separate validation; do not
   use unvalidated counters for billing. The map preserves existing IDs.
