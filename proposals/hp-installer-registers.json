@@ -1,0 +1,1692 @@
+{
+  "title": "Additional EGW installer-page read-only registers",
+  "status": "95 source-backed optional reads promoted; uncertain and rejected addresses remain excluded",
+  "entry_count": 95,
+  "entries": [
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 68,
+        "name": "DG1 fixed cooling supply temperature",
+        "key": "dg1_fixed_cooling_supply_temperature",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "Installer cooling-curve configuration; availability does not mean this group or cooling mode is enabled.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 69,
+        "name": "SG2 fixed cooling supply temperature",
+        "key": "sg2_fixed_cooling_supply_temperature",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "Installer cooling-curve configuration; availability does not mean this group or cooling mode is enabled.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 70,
+        "name": "SG3 fixed cooling supply temperature",
+        "key": "sg3_fixed_cooling_supply_temperature",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "Installer cooling-curve configuration; availability does not mean this group or cooling mode is enabled.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 71,
+        "name": "SG4 fixed cooling supply temperature",
+        "key": "sg4_fixed_cooling_supply_temperature",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "Installer cooling-curve configuration; availability does not mean this group or cooling mode is enabled.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 72,
+        "name": "SG5 fixed cooling supply temperature",
+        "key": "sg5_fixed_cooling_supply_temperature",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "Installer cooling-curve configuration; availability does not mean this group or cooling mode is enabled.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 73,
+        "name": "DG1 cooling curve supply endpoint 1",
+        "key": "dg1_cooling_curve_supply_endpoint_1",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "Installer cooling-curve configuration; availability does not mean this group or cooling mode is enabled.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 74,
+        "name": "SG2 cooling curve supply endpoint 1",
+        "key": "sg2_cooling_curve_supply_endpoint_1",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "Installer cooling-curve configuration; availability does not mean this group or cooling mode is enabled.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 75,
+        "name": "SG3 cooling curve supply endpoint 1",
+        "key": "sg3_cooling_curve_supply_endpoint_1",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "Installer cooling-curve configuration; availability does not mean this group or cooling mode is enabled.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 76,
+        "name": "SG4 cooling curve supply endpoint 1",
+        "key": "sg4_cooling_curve_supply_endpoint_1",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "Installer cooling-curve configuration; availability does not mean this group or cooling mode is enabled.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 77,
+        "name": "SG5 cooling curve supply endpoint 1",
+        "key": "sg5_cooling_curve_supply_endpoint_1",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "Installer cooling-curve configuration; availability does not mean this group or cooling mode is enabled.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 78,
+        "name": "DG1 cooling curve supply endpoint 2",
+        "key": "dg1_cooling_curve_supply_endpoint_2",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "Installer cooling-curve configuration; availability does not mean this group or cooling mode is enabled.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 79,
+        "name": "SG2 cooling curve supply endpoint 2",
+        "key": "sg2_cooling_curve_supply_endpoint_2",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "Installer cooling-curve configuration; availability does not mean this group or cooling mode is enabled.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 80,
+        "name": "SG3 cooling curve supply endpoint 2",
+        "key": "sg3_cooling_curve_supply_endpoint_2",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "Installer cooling-curve configuration; availability does not mean this group or cooling mode is enabled.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 81,
+        "name": "SG4 cooling curve supply endpoint 2",
+        "key": "sg4_cooling_curve_supply_endpoint_2",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "Installer cooling-curve configuration; availability does not mean this group or cooling mode is enabled.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 82,
+        "name": "SG5 cooling curve supply endpoint 2",
+        "key": "sg5_cooling_curve_supply_endpoint_2",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "Installer cooling-curve configuration; availability does not mean this group or cooling mode is enabled.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 83,
+        "name": "DG1 cooling curve outdoor endpoint 1",
+        "key": "dg1_cooling_curve_outdoor_endpoint_1",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "Installer cooling-curve configuration; availability does not mean this group or cooling mode is enabled.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 84,
+        "name": "SG2 cooling curve outdoor endpoint 1",
+        "key": "sg2_cooling_curve_outdoor_endpoint_1",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "Installer cooling-curve configuration; availability does not mean this group or cooling mode is enabled.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 85,
+        "name": "SG3 cooling curve outdoor endpoint 1",
+        "key": "sg3_cooling_curve_outdoor_endpoint_1",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "Installer cooling-curve configuration; availability does not mean this group or cooling mode is enabled.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 86,
+        "name": "SG4 cooling curve outdoor endpoint 1",
+        "key": "sg4_cooling_curve_outdoor_endpoint_1",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "Installer cooling-curve configuration; availability does not mean this group or cooling mode is enabled.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 87,
+        "name": "SG5 cooling curve outdoor endpoint 1",
+        "key": "sg5_cooling_curve_outdoor_endpoint_1",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "Installer cooling-curve configuration; availability does not mean this group or cooling mode is enabled.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 88,
+        "name": "DG1 cooling curve outdoor endpoint 2",
+        "key": "dg1_cooling_curve_outdoor_endpoint_2",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "Installer cooling-curve configuration; availability does not mean this group or cooling mode is enabled.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 89,
+        "name": "SG2 cooling curve outdoor endpoint 2",
+        "key": "sg2_cooling_curve_outdoor_endpoint_2",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "Installer cooling-curve configuration; availability does not mean this group or cooling mode is enabled.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 90,
+        "name": "SG3 cooling curve outdoor endpoint 2",
+        "key": "sg3_cooling_curve_outdoor_endpoint_2",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "Installer cooling-curve configuration; availability does not mean this group or cooling mode is enabled.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 91,
+        "name": "SG4 cooling curve outdoor endpoint 2",
+        "key": "sg4_cooling_curve_outdoor_endpoint_2",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "Installer cooling-curve configuration; availability does not mean this group or cooling mode is enabled.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 92,
+        "name": "SG5 cooling curve outdoor endpoint 2",
+        "key": "sg5_cooling_curve_outdoor_endpoint_2",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "Installer cooling-curve configuration; availability does not mean this group or cooling mode is enabled.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 96,
+        "name": "Bivalent parallel outdoor threshold",
+        "key": "bivalent_parallel_outdoor_threshold",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: parametros_bivalentes.js",
+        "note": "Outdoor threshold for parallel auxiliary-source operation."
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 97,
+        "name": "Floor drying phase 1 setpoint",
+        "key": "floor_drying_phase_1_setpoint",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: programas_especiales.js",
+        "note": "Floor-drying programme setpoint; static installer configuration.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 98,
+        "name": "Floor drying phase 2 setpoint",
+        "key": "floor_drying_phase_2_setpoint",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: programas_especiales.js",
+        "note": "Floor-drying programme setpoint; static installer configuration.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 99,
+        "name": "Floor drying phase 3 setpoint",
+        "key": "floor_drying_phase_3_setpoint",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: programas_especiales.js",
+        "note": "Floor-drying programme setpoint; static installer configuration.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 100,
+        "name": "Floor drying phase 4 setpoint",
+        "key": "floor_drying_phase_4_setpoint",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: programas_especiales.js",
+        "note": "Floor-drying programme setpoint; static installer configuration.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 101,
+        "name": "Floor drying phase 5 setpoint",
+        "key": "floor_drying_phase_5_setpoint",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: programas_especiales.js",
+        "note": "Floor-drying programme setpoint; static installer configuration.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 102,
+        "name": "Floor drying phase 6 setpoint",
+        "key": "floor_drying_phase_6_setpoint",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: programas_especiales.js",
+        "note": "Floor-drying programme setpoint; static installer configuration.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 139,
+        "name": "Bivalent support DT start",
+        "key": "bivalent_support_dt_start",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: parametros_bivalentes.js",
+        "note": "Temperature differential used to start bivalent support."
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 144,
+        "name": "Bivalent replacement outdoor threshold",
+        "key": "bivalent_replacement_outdoor_threshold",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: parametros_bivalentes.js",
+        "note": "Outdoor threshold for replacement operation; -99.9 C appears to be the disabled sentinel on the observed controller."
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 146,
+        "name": "DG1 BUS room-terminal DT",
+        "key": "dg1_bus_room_terminal_dt",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: calefaccion_instalador.js, frio_instalador.js",
+        "note": "BUS room-terminal temperature differential for this distribution group.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 147,
+        "name": "SG2 BUS room-terminal DT",
+        "key": "sg2_bus_room_terminal_dt",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: calefaccion_instalador.js, frio_instalador.js",
+        "note": "BUS room-terminal temperature differential for this distribution group.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 148,
+        "name": "SG3 BUS room-terminal DT",
+        "key": "sg3_bus_room_terminal_dt",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: calefaccion_instalador.js, frio_instalador.js",
+        "note": "BUS room-terminal temperature differential for this distribution group.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 149,
+        "name": "SG4 BUS room-terminal DT",
+        "key": "sg4_bus_room_terminal_dt",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: calefaccion_instalador.js, frio_instalador.js",
+        "note": "BUS room-terminal temperature differential for this distribution group.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 150,
+        "name": "SG5 BUS room-terminal DT",
+        "key": "sg5_bus_room_terminal_dt",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: calefaccion_instalador.js, frio_instalador.js",
+        "note": "BUS room-terminal temperature differential for this distribution group.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 167,
+        "name": "Source DT",
+        "key": "source_dt",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: captacion.js",
+        "note": "Installer source/capture-circuit temperature differential."
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 223,
+        "name": "E-manager activation threshold",
+        "key": "e_manager_activation_threshold",
+        "rw": "R",
+        "entity_type": "power_kw",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: emanager_instalador.js",
+        "note": "Grid-power threshold for e-manager activation; applicability requires a configured grid meter."
+      }
+    },
+    {
+      "bank": "analog",
+      "definition": {
+        "address": 224,
+        "name": "E-manager deactivation threshold",
+        "key": "e_manager_deactivation_threshold",
+        "rw": "R",
+        "entity_type": "power_kw",
+        "scale": 0.1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: emanager_instalador.js",
+        "note": "Grid-power threshold for e-manager deactivation; applicability requires a configured grid meter."
+      }
+    },
+    {
+      "bank": "integer",
+      "definition": {
+        "address": 5027,
+        "name": "DG1 heating emission system",
+        "key": "dg1_heating_emission_system",
+        "rw": "R",
+        "entity_type": "enum",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: calefaccion_instalador.js",
+        "note": "Installer selection for the heating emitter type.",
+        "disabled_by_default": true,
+        "enum": {
+          "0": "Radiant floor",
+          "1": "Fan coil",
+          "2": "Low-temperature radiator"
+        }
+      }
+    },
+    {
+      "bank": "integer",
+      "definition": {
+        "address": 5028,
+        "name": "SG2 heating emission system",
+        "key": "sg2_heating_emission_system",
+        "rw": "R",
+        "entity_type": "enum",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: calefaccion_instalador.js",
+        "note": "Installer selection for the heating emitter type.",
+        "disabled_by_default": true,
+        "enum": {
+          "0": "Radiant floor",
+          "1": "Fan coil",
+          "2": "Low-temperature radiator"
+        }
+      }
+    },
+    {
+      "bank": "integer",
+      "definition": {
+        "address": 5029,
+        "name": "SG3 heating emission system",
+        "key": "sg3_heating_emission_system",
+        "rw": "R",
+        "entity_type": "enum",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: calefaccion_instalador.js",
+        "note": "Installer selection for the heating emitter type.",
+        "disabled_by_default": true,
+        "enum": {
+          "0": "Radiant floor",
+          "1": "Fan coil",
+          "2": "Low-temperature radiator"
+        }
+      }
+    },
+    {
+      "bank": "integer",
+      "definition": {
+        "address": 5030,
+        "name": "SG4 heating emission system",
+        "key": "sg4_heating_emission_system",
+        "rw": "R",
+        "entity_type": "enum",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: calefaccion_instalador.js",
+        "note": "Installer selection for the heating emitter type.",
+        "disabled_by_default": true,
+        "enum": {
+          "0": "Radiant floor",
+          "1": "Fan coil",
+          "2": "Low-temperature radiator"
+        }
+      }
+    },
+    {
+      "bank": "integer",
+      "definition": {
+        "address": 5031,
+        "name": "SG5 heating emission system",
+        "key": "sg5_heating_emission_system",
+        "rw": "R",
+        "entity_type": "enum",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: calefaccion_instalador.js",
+        "note": "Installer selection for the heating emitter type.",
+        "disabled_by_default": true,
+        "enum": {
+          "0": "Radiant floor",
+          "1": "Fan coil",
+          "2": "Low-temperature radiator"
+        }
+      }
+    },
+    {
+      "bank": "integer",
+      "definition": {
+        "address": 5032,
+        "name": "Building insulation selection raw",
+        "key": "building_insulation_selection_raw",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: calefaccion_instalador.js",
+        "note": "Raw installer selection. The captured script labels the choices good, regular and bad but does not prove their numeric order.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "integer",
+      "definition": {
+        "address": 5033,
+        "name": "Cooling connection type raw",
+        "key": "cooling_connection_type_raw",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js, frio_usuario.js",
+        "note": "Raw active-cooling connection selection; numeric option meanings are not asserted.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "integer",
+      "definition": {
+        "address": 5034,
+        "name": "DG1 cooling emission system",
+        "key": "dg1_cooling_emission_system",
+        "rw": "R",
+        "entity_type": "enum",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "Installer selection for the cooling emitter type.",
+        "disabled_by_default": true,
+        "enum": {
+          "0": "Radiant floor",
+          "1": "Fan coil",
+          "2": "Low-temperature radiator"
+        }
+      }
+    },
+    {
+      "bank": "integer",
+      "definition": {
+        "address": 5035,
+        "name": "SG2 cooling emission system",
+        "key": "sg2_cooling_emission_system",
+        "rw": "R",
+        "entity_type": "enum",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "Installer selection for the cooling emitter type.",
+        "disabled_by_default": true,
+        "enum": {
+          "0": "Radiant floor",
+          "1": "Fan coil",
+          "2": "Low-temperature radiator"
+        }
+      }
+    },
+    {
+      "bank": "integer",
+      "definition": {
+        "address": 5036,
+        "name": "SG3 cooling emission system",
+        "key": "sg3_cooling_emission_system",
+        "rw": "R",
+        "entity_type": "enum",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "Installer selection for the cooling emitter type.",
+        "disabled_by_default": true,
+        "enum": {
+          "0": "Radiant floor",
+          "1": "Fan coil",
+          "2": "Low-temperature radiator"
+        }
+      }
+    },
+    {
+      "bank": "integer",
+      "definition": {
+        "address": 5037,
+        "name": "SG4 cooling emission system",
+        "key": "sg4_cooling_emission_system",
+        "rw": "R",
+        "entity_type": "enum",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "Installer selection for the cooling emitter type.",
+        "disabled_by_default": true,
+        "enum": {
+          "0": "Radiant floor",
+          "1": "Fan coil",
+          "2": "Low-temperature radiator"
+        }
+      }
+    },
+    {
+      "bank": "integer",
+      "definition": {
+        "address": 5038,
+        "name": "SG5 cooling emission system",
+        "key": "sg5_cooling_emission_system",
+        "rw": "R",
+        "entity_type": "enum",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "Installer selection for the cooling emitter type.",
+        "disabled_by_default": true,
+        "enum": {
+          "0": "Radiant floor",
+          "1": "Fan coil",
+          "2": "Low-temperature radiator"
+        }
+      }
+    },
+    {
+      "bank": "integer",
+      "definition": {
+        "address": 5044,
+        "name": "Bivalent support activation delay",
+        "key": "bivalent_support_activation_delay",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: parametros_bivalentes.js",
+        "note": "Bivalent support activation delay in minutes."
+      }
+    },
+    {
+      "bank": "integer",
+      "definition": {
+        "address": 5205,
+        "name": "Smart Grid valley DHW temperature adjustment",
+        "key": "smart_grid_valley_dhw_temperature_adjustment",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: control_remoto1.js",
+        "note": "Whole-degree setpoint adjustment applied in the Smart Grid valley mode; this is not an absolute target."
+      }
+    },
+    {
+      "bank": "integer",
+      "definition": {
+        "address": 5206,
+        "name": "Smart Grid valley heating temperature adjustment",
+        "key": "smart_grid_valley_heating_temperature_adjustment",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: control_remoto1.js",
+        "note": "Whole-degree setpoint adjustment applied in the Smart Grid valley mode; this is not an absolute target."
+      }
+    },
+    {
+      "bank": "integer",
+      "definition": {
+        "address": 5207,
+        "name": "Smart Grid valley cooling temperature adjustment",
+        "key": "smart_grid_valley_cooling_temperature_adjustment",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: control_remoto1.js",
+        "note": "Whole-degree setpoint adjustment applied in the Smart Grid valley mode; this is not an absolute target."
+      }
+    },
+    {
+      "bank": "integer",
+      "definition": {
+        "address": 5208,
+        "name": "Smart Grid valley pool temperature adjustment",
+        "key": "smart_grid_valley_pool_temperature_adjustment",
+        "rw": "R",
+        "entity_type": "temperature",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: control_remoto1.js",
+        "note": "Whole-degree setpoint adjustment applied in the Smart Grid valley mode; this is not an absolute target."
+      }
+    },
+    {
+      "bank": "integer",
+      "definition": {
+        "address": 5299,
+        "name": "Web interface language code raw",
+        "key": "web_interface_language_code_raw",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: seleccionar_idioma.js",
+        "note": "Raw EasyNet web-language selection code.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "integer",
+      "definition": {
+        "address": 5323,
+        "name": "Model code character 1",
+        "key": "model_code_character_1",
+        "rw": "R",
+        "entity_type": "enum",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: seleccionar_modelo.js, control_remoto1.js",
+        "note": "One character of the encoded controller model/application code. The integration already combines these six registers for device-model detection.",
+        "disabled_by_default": true,
+        "enum": {
+          "0": "--",
+          "1": "0",
+          "2": "1",
+          "3": "2",
+          "4": "3",
+          "5": "4",
+          "6": "5",
+          "7": "6",
+          "8": "7",
+          "9": "8",
+          "10": "9",
+          "11": "A",
+          "12": "B",
+          "13": "C",
+          "14": "D",
+          "15": "E",
+          "16": "F",
+          "17": "G",
+          "18": "H",
+          "19": "I",
+          "20": "J",
+          "21": "K",
+          "22": "L",
+          "23": "M",
+          "24": "N",
+          "25": "O",
+          "26": "P",
+          "27": "Q",
+          "28": "R",
+          "29": "S",
+          "30": "T",
+          "31": "U",
+          "32": "V",
+          "33": "W",
+          "34": "X",
+          "35": "Y",
+          "36": "Z"
+        }
+      }
+    },
+    {
+      "bank": "integer",
+      "definition": {
+        "address": 5324,
+        "name": "Model code character 2",
+        "key": "model_code_character_2",
+        "rw": "R",
+        "entity_type": "enum",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: seleccionar_modelo.js, control_remoto1.js",
+        "note": "One character of the encoded controller model/application code. The integration already combines these six registers for device-model detection.",
+        "disabled_by_default": true,
+        "enum": {
+          "0": "--",
+          "1": "0",
+          "2": "1",
+          "3": "2",
+          "4": "3",
+          "5": "4",
+          "6": "5",
+          "7": "6",
+          "8": "7",
+          "9": "8",
+          "10": "9",
+          "11": "A",
+          "12": "B",
+          "13": "C",
+          "14": "D",
+          "15": "E",
+          "16": "F",
+          "17": "G",
+          "18": "H",
+          "19": "I",
+          "20": "J",
+          "21": "K",
+          "22": "L",
+          "23": "M",
+          "24": "N",
+          "25": "O",
+          "26": "P",
+          "27": "Q",
+          "28": "R",
+          "29": "S",
+          "30": "T",
+          "31": "U",
+          "32": "V",
+          "33": "W",
+          "34": "X",
+          "35": "Y",
+          "36": "Z"
+        }
+      }
+    },
+    {
+      "bank": "integer",
+      "definition": {
+        "address": 5325,
+        "name": "Model code character 3",
+        "key": "model_code_character_3",
+        "rw": "R",
+        "entity_type": "enum",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: seleccionar_modelo.js, control_remoto1.js",
+        "note": "One character of the encoded controller model/application code. The integration already combines these six registers for device-model detection.",
+        "disabled_by_default": true,
+        "enum": {
+          "0": "--",
+          "1": "0",
+          "2": "1",
+          "3": "2",
+          "4": "3",
+          "5": "4",
+          "6": "5",
+          "7": "6",
+          "8": "7",
+          "9": "8",
+          "10": "9",
+          "11": "A",
+          "12": "B",
+          "13": "C",
+          "14": "D",
+          "15": "E",
+          "16": "F",
+          "17": "G",
+          "18": "H",
+          "19": "I",
+          "20": "J",
+          "21": "K",
+          "22": "L",
+          "23": "M",
+          "24": "N",
+          "25": "O",
+          "26": "P",
+          "27": "Q",
+          "28": "R",
+          "29": "S",
+          "30": "T",
+          "31": "U",
+          "32": "V",
+          "33": "W",
+          "34": "X",
+          "35": "Y",
+          "36": "Z"
+        }
+      }
+    },
+    {
+      "bank": "integer",
+      "definition": {
+        "address": 5326,
+        "name": "Model code character 4",
+        "key": "model_code_character_4",
+        "rw": "R",
+        "entity_type": "enum",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: seleccionar_modelo.js, control_remoto1.js",
+        "note": "One character of the encoded controller model/application code. The integration already combines these six registers for device-model detection.",
+        "disabled_by_default": true,
+        "enum": {
+          "0": "--",
+          "1": "0",
+          "2": "1",
+          "3": "2",
+          "4": "3",
+          "5": "4",
+          "6": "5",
+          "7": "6",
+          "8": "7",
+          "9": "8",
+          "10": "9",
+          "11": "A",
+          "12": "B",
+          "13": "C",
+          "14": "D",
+          "15": "E",
+          "16": "F",
+          "17": "G",
+          "18": "H",
+          "19": "I",
+          "20": "J",
+          "21": "K",
+          "22": "L",
+          "23": "M",
+          "24": "N",
+          "25": "O",
+          "26": "P",
+          "27": "Q",
+          "28": "R",
+          "29": "S",
+          "30": "T",
+          "31": "U",
+          "32": "V",
+          "33": "W",
+          "34": "X",
+          "35": "Y",
+          "36": "Z"
+        }
+      }
+    },
+    {
+      "bank": "integer",
+      "definition": {
+        "address": 5327,
+        "name": "Model code character 5",
+        "key": "model_code_character_5",
+        "rw": "R",
+        "entity_type": "enum",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: seleccionar_modelo.js, control_remoto1.js",
+        "note": "One character of the encoded controller model/application code. The integration already combines these six registers for device-model detection.",
+        "disabled_by_default": true,
+        "enum": {
+          "0": "--",
+          "1": "0",
+          "2": "1",
+          "3": "2",
+          "4": "3",
+          "5": "4",
+          "6": "5",
+          "7": "6",
+          "8": "7",
+          "9": "8",
+          "10": "9",
+          "11": "A",
+          "12": "B",
+          "13": "C",
+          "14": "D",
+          "15": "E",
+          "16": "F",
+          "17": "G",
+          "18": "H",
+          "19": "I",
+          "20": "J",
+          "21": "K",
+          "22": "L",
+          "23": "M",
+          "24": "N",
+          "25": "O",
+          "26": "P",
+          "27": "Q",
+          "28": "R",
+          "29": "S",
+          "30": "T",
+          "31": "U",
+          "32": "V",
+          "33": "W",
+          "34": "X",
+          "35": "Y",
+          "36": "Z"
+        }
+      }
+    },
+    {
+      "bank": "integer",
+      "definition": {
+        "address": 5328,
+        "name": "Model code character 6",
+        "key": "model_code_character_6",
+        "rw": "R",
+        "entity_type": "enum",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: seleccionar_modelo.js, control_remoto1.js",
+        "note": "One character of the encoded controller model/application code. The integration already combines these six registers for device-model detection.",
+        "disabled_by_default": true,
+        "enum": {
+          "0": "--",
+          "1": "0",
+          "2": "1",
+          "3": "2",
+          "4": "3",
+          "5": "4",
+          "6": "5",
+          "7": "6",
+          "8": "7",
+          "9": "8",
+          "10": "9",
+          "11": "A",
+          "12": "B",
+          "13": "C",
+          "14": "D",
+          "15": "E",
+          "16": "F",
+          "17": "G",
+          "18": "H",
+          "19": "I",
+          "20": "J",
+          "21": "K",
+          "22": "L",
+          "23": "M",
+          "24": "N",
+          "25": "O",
+          "26": "P",
+          "27": "Q",
+          "28": "R",
+          "29": "S",
+          "30": "T",
+          "31": "U",
+          "32": "V",
+          "33": "W",
+          "34": "X",
+          "35": "Y",
+          "36": "Z"
+        }
+      }
+    },
+    {
+      "bank": "boolean",
+      "definition": {
+        "address": 49,
+        "name": "DG1 heating thermostat logic",
+        "key": "dg1_heating_thermostat_logic",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: calefaccion_instalador.js",
+        "note": "0=normally closed, 1=normally open.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "boolean",
+      "definition": {
+        "address": 72,
+        "name": "DG1 cooling thermostat logic",
+        "key": "dg1_cooling_thermostat_logic",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "0=normally closed, 1=normally open.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "boolean",
+      "definition": {
+        "address": 50,
+        "name": "SG2 heating thermostat logic",
+        "key": "sg2_heating_thermostat_logic",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: calefaccion_instalador.js",
+        "note": "0=normally closed, 1=normally open.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "boolean",
+      "definition": {
+        "address": 73,
+        "name": "SG2 cooling thermostat logic",
+        "key": "sg2_cooling_thermostat_logic",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "0=normally closed, 1=normally open.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "boolean",
+      "definition": {
+        "address": 51,
+        "name": "SG3 heating thermostat logic",
+        "key": "sg3_heating_thermostat_logic",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: calefaccion_instalador.js",
+        "note": "0=normally closed, 1=normally open.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "boolean",
+      "definition": {
+        "address": 74,
+        "name": "SG3 cooling thermostat logic",
+        "key": "sg3_cooling_thermostat_logic",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "0=normally closed, 1=normally open.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "boolean",
+      "definition": {
+        "address": 52,
+        "name": "SG4 heating thermostat logic",
+        "key": "sg4_heating_thermostat_logic",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: calefaccion_instalador.js",
+        "note": "0=normally closed, 1=normally open.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "boolean",
+      "definition": {
+        "address": 75,
+        "name": "SG4 cooling thermostat logic",
+        "key": "sg4_cooling_thermostat_logic",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "0=normally closed, 1=normally open.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "boolean",
+      "definition": {
+        "address": 53,
+        "name": "SG5 heating thermostat logic",
+        "key": "sg5_heating_thermostat_logic",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: calefaccion_instalador.js",
+        "note": "0=normally closed, 1=normally open.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "boolean",
+      "definition": {
+        "address": 76,
+        "name": "SG5 cooling thermostat logic",
+        "key": "sg5_cooling_thermostat_logic",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js",
+        "note": "0=normally closed, 1=normally open.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "boolean",
+      "definition": {
+        "address": 86,
+        "name": "Floor drying programme enabled",
+        "key": "floor_drying_programme_enabled",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: programas_especiales.js",
+        "note": "Installer enable state for the floor-drying programme.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "boolean",
+      "definition": {
+        "address": 89,
+        "name": "BUS room-terminal DT control enabled",
+        "key": "bus_room_terminal_dt_control_enabled",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: calefaccion_instalador.js, frio_instalador.js",
+        "note": "Enables the BUS room-terminal temperature-differential setting.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "boolean",
+      "definition": {
+        "address": 90,
+        "name": "EVU control enabled",
+        "key": "evu_control_enabled",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: control_remoto1.js",
+        "note": "Installer enable state for EVU remote control."
+      }
+    },
+    {
+      "bank": "boolean",
+      "definition": {
+        "address": 92,
+        "name": "EVU DI1 logic",
+        "key": "evu_di1_logic",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: control_remoto1.js",
+        "note": "0=normally closed, 1=normally open."
+      }
+    },
+    {
+      "bank": "boolean",
+      "definition": {
+        "address": 93,
+        "name": "Winter/summer remote control enabled",
+        "key": "winter_summer_remote_control_enabled",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: control_remoto2.js",
+        "note": "Installer enable state for the winter/summer remote input."
+      }
+    },
+    {
+      "bank": "boolean",
+      "definition": {
+        "address": 94,
+        "name": "Winter/summer DI2 logic",
+        "key": "winter_summer_di2_logic",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: control_remoto2.js",
+        "note": "0=normally closed, 1=normally open."
+      }
+    },
+    {
+      "bank": "boolean",
+      "definition": {
+        "address": 95,
+        "name": "DHW remote control enabled",
+        "key": "dhw_remote_control_enabled",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: control_remoto2.js",
+        "note": "Installer enable state for the dhw remote input."
+      }
+    },
+    {
+      "bank": "boolean",
+      "definition": {
+        "address": 96,
+        "name": "DHW DI3 logic",
+        "key": "dhw_di3_logic",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: control_remoto2.js",
+        "note": "0=normally closed, 1=normally open."
+      }
+    },
+    {
+      "bank": "boolean",
+      "definition": {
+        "address": 97,
+        "name": "Pool remote control enabled",
+        "key": "pool_remote_control_enabled",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: control_remoto2.js",
+        "note": "Installer enable state for the pool remote input."
+      }
+    },
+    {
+      "bank": "boolean",
+      "definition": {
+        "address": 98,
+        "name": "Pool DI4 logic",
+        "key": "pool_di4_logic",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: control_remoto2.js",
+        "note": "0=normally closed, 1=normally open."
+      }
+    },
+    {
+      "bank": "boolean",
+      "definition": {
+        "address": 190,
+        "name": "Smart Grid signal 1 logic (EATM00)",
+        "key": "smart_grid_signal_1_logic_eatm00",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: control_remoto1.js",
+        "note": "EATM00 model branch uses DI15 at this address; 0=normally closed, 1=normally open."
+      }
+    },
+    {
+      "bank": "boolean",
+      "definition": {
+        "address": 191,
+        "name": "Smart Grid signal 2 logic (EATM00)",
+        "key": "smart_grid_signal_2_logic_eatm00",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: control_remoto1.js",
+        "note": "EATM00 model branch uses DI16 at this address; 0=normally closed, 1=normally open."
+      }
+    },
+    {
+      "bank": "boolean",
+      "definition": {
+        "address": 223,
+        "name": "Boiler production pump configured",
+        "key": "boiler_production_pump_configured",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: caldera.js",
+        "note": "Installer configuration flag, not proof that the pump is currently running."
+      }
+    },
+    {
+      "bank": "boolean",
+      "definition": {
+        "address": 226,
+        "name": "SG2 three-way valve direction",
+        "key": "sg2_three_way_valve_direction",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: calefaccion_instalador.js, frio_instalador.js",
+        "note": "0=direct 0-10 V, 1=reverse 10-0 V.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "boolean",
+      "definition": {
+        "address": 227,
+        "name": "SG3 three-way valve direction",
+        "key": "sg3_three_way_valve_direction",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: calefaccion_instalador.js, frio_instalador.js",
+        "note": "0=direct 0-10 V, 1=reverse 10-0 V.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "boolean",
+      "definition": {
+        "address": 228,
+        "name": "SG4 three-way valve direction",
+        "key": "sg4_three_way_valve_direction",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: calefaccion_instalador.js, frio_instalador.js",
+        "note": "0=direct 0-10 V, 1=reverse 10-0 V.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "boolean",
+      "definition": {
+        "address": 229,
+        "name": "SG5 three-way valve direction",
+        "key": "sg5_three_way_valve_direction",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: calefaccion_instalador.js, frio_instalador.js",
+        "note": "0=direct 0-10 V, 1=reverse 10-0 V.",
+        "disabled_by_default": true
+      }
+    },
+    {
+      "bank": "boolean",
+      "definition": {
+        "address": 260,
+        "name": "Smart Grid control enabled",
+        "key": "smart_grid_control_enabled",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: control_remoto1.js",
+        "note": "Installer enable state for two-input Smart Grid control."
+      }
+    },
+    {
+      "bank": "boolean",
+      "definition": {
+        "address": 263,
+        "name": "E-manager grid meter connection type",
+        "key": "e_manager_grid_meter_connection_type",
+        "rw": "R",
+        "entity_type": "raw",
+        "scale": 1,
+        "optional": true,
+        "source": "EGW_v2.18 gama2 installer web client: emanager_instalador.js",
+        "note": "0=single-phase, 1=three-phase; applicability requires a configured e-manager grid meter."
+      }
+    }
+  ]
+}

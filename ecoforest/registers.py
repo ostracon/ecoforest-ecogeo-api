@@ -65,6 +65,18 @@ def read_requests(mapping):
     return requests
 
 
+def split_optional_request(request):
+    """Bisect a rejected optional block so supported neighbours remain available."""
+    if not request.get('optional') or request['length'] <= 1:
+        return []
+    left_length = request['length'] // 2
+    return [
+        dict(request, length=left_length),
+        dict(request, address=request['address'] + left_length,
+             length=request['length'] - left_length),
+    ]
+
+
 def decode(raw, definition):
     if raw is None:
         return None

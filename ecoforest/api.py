@@ -1,6 +1,7 @@
 import logging
 import asyncio
-from .registers import hp_mapping, read_requests, decode, validate_read, parse_read, signed_integer
+from .registers import (hp_mapping, read_requests, split_optional_request, decode,
+                        validate_read, parse_read, signed_integer)
 from http import HTTPStatus
 from typing import Any, List, Tuple
 import httpx
@@ -249,7 +250,11 @@ class EcoGeo25100:
         async with self._read_lock:
             state = {1: {}, 2: {}}
             self.failed_reads = []
-            for request in read_requests(self.mapping):
+            requests = read_requests(self.mapping)
+            request_index = 0
+            while request_index < len(requests):
+                request = requests[request_index]
+                request_index += 1
                 try:
                     response = await self.api.make_read_operation_request(
                         2001 if request['data_type'] == 2 else 2002,
@@ -262,7 +267,11 @@ class EcoGeo25100:
                 except (EcoforestError, httpx.RequestError):
                     if not request['optional']:
                         raise
-                    self.failed_reads.append(request)
+                    smaller = split_optional_request(request)
+                    if smaller:
+                        requests[request_index:request_index] = smaller
+                    else:
+                        self.failed_reads.append(request)
                 await asyncio.sleep(0.05)
             self.raw_values = {k: state[r['data_type']].get(r['address']) for k,r in self.mapping.items()}
             return {k: decode(self.raw_values[k], r) for k,r in self.mapping.items()}

@@ -21,7 +21,7 @@ async def main():
 asyncio.run(main())
 ```
 
-`read_all()` returns all 475 named HP fields; `mapping` and `raw_values` retain
+`read_all()` returns all 570 named HP fields; `mapping` and `raw_values` retain
 source metadata and the underlying payload. Legacy `read_translate_*` methods
 remain available but expose only their original subset. Do not run concurrent
 pollers or poll faster than the existing HA 60-second interval.

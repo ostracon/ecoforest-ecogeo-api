@@ -20,7 +20,7 @@ class ReadOnlyApiTests(unittest.IsolatedAsyncioTestCase):
             self.assertEqual(requests,[])
             device=EcoGeo25100(api)
             with patch('ecoforest.api.asyncio.sleep',new=AsyncMock()):values=await device.read_all()
-            self.assertEqual(len(values),475)
+            self.assertEqual(len(values),570)
             self.assertEqual(device.failed_reads,[])
             self.assertTrue(all(q['idOperacion'] in [2001,2002] for q in requests))
     async def test_connection_failure_is_not_attribute_error(self):

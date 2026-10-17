@@ -38,7 +38,7 @@ class WebRegisterProposalTests(unittest.TestCase):
 
     def test_proposed_entries_are_promoted_once_without_collisions_or_holes(self):
         active=r.hp_mapping()
-        self.assertEqual(len(active),475)
+        self.assertEqual(len(active),570)
         extra={d['key']:d for d in DEFS.values()}
         self.assertEqual(len(extra),115)
         self.assertTrue(extra.keys() <= active.keys())
@@ -51,10 +51,10 @@ class WebRegisterProposalTests(unittest.TestCase):
                 self.assertEqual(actual['rw'],'R')
                 self.assertTrue(actual['optional'])
         named={(d['data_type'],d['address']) for d in active.values()}
-        self.assertEqual(len(named),475)
+        self.assertEqual(len(named),570)
         requests=r.read_requests(active)
         planned=[(q['data_type'],a) for q in requests for a in range(q['address'],q['address']+q['length'])]
-        self.assertEqual(len(planned),475); self.assertEqual(set(planned),named)
+        self.assertEqual(len(planned),570); self.assertEqual(set(planned),named)
         for q in requests:
             self.assertLessEqual(q['length'],64)
             r.validate_read(dict(idOperacion=2001 if q['data_type']==2 else 2002,dir=q['address'],num=q['length']))
