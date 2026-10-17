@@ -35,5 +35,13 @@ class InstallerRegisterTests(unittest.TestCase):
         self.assertEqual(r.decode("FFFB", mapping["e_manager_activation_threshold"]), -0.5)
         self.assertEqual(r.decode("000F", mapping["model_code_character_1"]), "E")
         self.assertEqual(r.decode("000B", mapping["model_code_character_2"]), "A")
+        self.assertEqual(r.decode("0000", mapping["building_insulation_selection_raw"]), "Good")
+        self.assertEqual(r.decode("0001", mapping["building_insulation_selection_raw"]), "Bad")
+        self.assertEqual(r.decode("0002", mapping["building_insulation_selection_raw"]), "Moderate")
+        self.assertEqual(r.decode("0000", mapping["cooling_connection_type_raw"]), "Not configured")
+        self.assertEqual(r.decode("0001", mapping["cooling_connection_type_raw"]), "Direct")
+        self.assertEqual(r.decode("0002", mapping["cooling_connection_type_raw"]), "Buffer")
+        self.assertEqual(r.decode("000F", mapping["compressor_delay_setting_raw"]), 15)
+        self.assertEqual(mapping["compressor_delay_setting_raw"]["entity_type"], "duration_min")
         self.assertTrue(mapping["dg1_fixed_cooling_supply_temperature"]["disabled_by_default"])
 

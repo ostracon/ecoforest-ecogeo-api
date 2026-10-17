@@ -731,30 +731,40 @@
       "bank": "integer",
       "definition": {
         "address": 5032,
-        "name": "Building insulation selection raw",
+        "name": "Building insulation selection",
         "key": "building_insulation_selection_raw",
         "rw": "R",
-        "entity_type": "raw",
+        "entity_type": "enum",
         "scale": 1,
         "optional": true,
-        "source": "EGW_v2.18 gama2 installer web client: calefaccion_instalador.js",
-        "note": "Raw installer selection. The captured script labels the choices good, regular and bad but does not prove their numeric order.",
-        "disabled_by_default": true
+        "source": "EGW_v2.18 gama2 installer web client: calefaccion_instalador.html/js",
+        "note": "Installer selection. Numeric option order is explicit in the archived HTML.",
+        "disabled_by_default": true,
+        "enum": {
+          "0": "Good",
+          "1": "Bad",
+          "2": "Moderate"
+        }
       }
     },
     {
       "bank": "integer",
       "definition": {
         "address": 5033,
-        "name": "Cooling connection type raw",
+        "name": "Cooling connection type",
         "key": "cooling_connection_type_raw",
         "rw": "R",
-        "entity_type": "raw",
+        "entity_type": "enum",
         "scale": 1,
         "optional": true,
-        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js, frio_usuario.js",
-        "note": "Raw active-cooling connection selection; numeric option meanings are not asserted.",
-        "disabled_by_default": true
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.html/js, frio_usuario.js",
+        "note": "Active-cooling connection selection. Values 1 and 2 are explicit HTML options; 0 is the unselected/default state.",
+        "disabled_by_default": true,
+        "enum": {
+          "0": "Not configured",
+          "1": "Direct",
+          "2": "Buffer"
+        }
       }
     },
     {

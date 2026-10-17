@@ -530,7 +530,7 @@
       },
       {
         "address": 5282,
-        "name": "Start counter \u00d71000",
+        "name": "Start counter ×1000",
         "rw": "R"
       },
       {
@@ -5240,14 +5240,14 @@
       },
       {
         "address": 5173,
-        "name": "Compressor delay setting raw",
+        "name": "Compressor delay",
         "key": "compressor_delay_setting_raw",
         "rw": "R",
-        "entity_type": "raw",
+        "entity_type": "duration_min",
         "scale": 1,
         "optional": true,
-        "source": "Installed EGW_v2.18 gama2 web client",
-        "note": "UNVALIDATED: zero does not establish equal priority or disabled compressor protection."
+        "source": "Installed EGW_v2.18 gama2 installer protections page",
+        "note": "Configured compressor delay in minutes (web input range 0-99). The observed value is 0 and is separate from the dynamic approximately 15-minute minimum start-to-start countdown."
       },
       {
         "address": 5181,
@@ -5447,27 +5447,37 @@
       },
       {
         "address": 5032,
-        "name": "Building insulation selection raw",
+        "name": "Building insulation selection",
         "key": "building_insulation_selection_raw",
         "rw": "R",
-        "entity_type": "raw",
+        "entity_type": "enum",
         "scale": 1,
         "optional": true,
-        "source": "EGW_v2.18 gama2 installer web client: calefaccion_instalador.js",
-        "note": "Raw installer selection. The captured script labels the choices good, regular and bad but does not prove their numeric order.",
-        "disabled_by_default": true
+        "source": "EGW_v2.18 gama2 installer web client: calefaccion_instalador.html/js",
+        "note": "Installer selection. Numeric option order is explicit in the archived HTML.",
+        "disabled_by_default": true,
+        "enum": {
+          "0": "Good",
+          "1": "Bad",
+          "2": "Moderate"
+        }
       },
       {
         "address": 5033,
-        "name": "Cooling connection type raw",
+        "name": "Cooling connection type",
         "key": "cooling_connection_type_raw",
         "rw": "R",
-        "entity_type": "raw",
+        "entity_type": "enum",
         "scale": 1,
         "optional": true,
-        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.js, frio_usuario.js",
-        "note": "Raw active-cooling connection selection; numeric option meanings are not asserted.",
-        "disabled_by_default": true
+        "source": "EGW_v2.18 gama2 installer web client: frio_instalador.html/js, frio_usuario.js",
+        "note": "Active-cooling connection selection. Values 1 and 2 are explicit HTML options; 0 is the unselected/default state.",
+        "disabled_by_default": true,
+        "enum": {
+          "0": "Not configured",
+          "1": "Direct",
+          "2": "Buffer"
+        }
       },
       {
         "address": 5034,

@@ -39,7 +39,9 @@ probes (-999.9°C) become unavailable. Coils are exposed as numeric 0/1 sensors.
   valve-position feedback or proof of uninterrupted service changeover.
 - Mode inputs 5085–5088 are raw inputs used jointly by the web status icons;
   they are not exclusive active-service enums.
-- Priority selections 5039–5043 and delay 5173 remain explicitly unvalidated.
+- Priority selections 5039–5043 remain explicitly unvalidated. Register 5173
+  is the installer compressor delay in minutes (range 0–99); its observed zero
+  value is separate from the dynamic anti-cycle start countdown.
   A zero does not establish equal priorities or disabled protection. No
   minutes-per-hour setting has been verified for this controller.
 - The 210 additional web-backed fields promoted in two October 2026 batches were checked
