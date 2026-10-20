@@ -56,3 +56,23 @@ class RegisterTests(unittest.TestCase):
         self.assertEqual(r.decode('0006',byaddr[5139]),'Heating buffer')
         self.assertIsNone(r.decode('0063',byaddr[5139]))
         self.assertIsNone(r.decode(None,byaddr[117]))
+
+    def test_live_compressor_references_and_alarm_record_words(self):
+        defs = r.hp_mapping()
+        self.assertEqual(r.decode('011E', defs['set_speed_ref_show']), 28.6)
+        self.assertEqual(r.decode('011E', defs['ref_show_actual_reference']), 28.6)
+        self.assertEqual(defs['set_speed_ref_show']['entity_type'], 'percent')
+        self.assertEqual(defs['ref_show_actual_reference']['entity_type'], 'percent')
+
+        alarm_words = {
+            5118: 'A1L', 5119: 'A1H', 5120: 'A2L', 5121: 'A2H',
+            5122: 'W1L', 5123: 'W1H', 5124: 'W2L', 5125: 'W2H',
+            5126: 'EWL', 5127: 'SW', 5128: 'DI', 5130: 'EWH',
+        }
+        by_address = {v['address']: v for v in defs.values() if v['data_type'] == 1}
+        for address, label in alarm_words.items():
+            with self.subTest(address=address):
+                definition = by_address[address]
+                self.assertEqual(definition['entity_type'], 'raw')
+                self.assertIn(label, definition['name'])
+                self.assertEqual(r.decode('0800', definition), 2048)

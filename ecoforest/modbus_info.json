@@ -2792,12 +2792,13 @@
       },
       {
         "address": 5003,
-        "name": "Set_Speed_REF_show",
+        "name": "Compressor reference command",
         "rw": "R",
         "key": "set_speed_ref_show",
-        "entity_type": "measurement",
-        "scale": 1,
-        "source": "Ecoforest Modbus 2023 v02, HP pp11-17"
+        "entity_type": "percent",
+        "scale": 0.1,
+        "source": "Ecoforest Modbus 2023 v02, HP pp11-17",
+        "note": "Live compressor reference requested by the controller; raw value is tenths of a percent."
       },
       {
         "address": 5004,
@@ -2810,12 +2811,13 @@
       },
       {
         "address": 5005,
-        "name": "REF_show (actual reference)",
+        "name": "Compressor reference actual",
         "rw": "R",
         "key": "ref_show_actual_reference",
-        "entity_type": "measurement",
-        "scale": 1,
-        "source": "Ecoforest Modbus 2023 v02, HP pp11-17"
+        "entity_type": "percent",
+        "scale": 0.1,
+        "source": "Ecoforest Modbus 2023 v02, HP pp11-17",
+        "note": "Live compressor reference reported by the inverter; raw value is tenths of a percent."
       },
       {
         "address": 5006,
@@ -4485,102 +4487,113 @@
       },
       {
         "address": 5118,
-        "name": "Log: Brine supply temperature",
+        "name": "Alarm record word 1 / inverter A1L",
         "rw": "R",
         "key": "log_brine_supply_temperature",
-        "entity_type": "temperature",
-        "scale": 0.1,
-        "source": "Ecoforest Modbus 2023 v02, HP pp11-17"
+        "entity_type": "raw",
+        "scale": 1,
+        "source": "Ecoforest Modbus 2023 v02, HP pp11-17; EGW_v2.18 gama2 alarma_instalador.js",
+        "note": "Alarm-history snapshot, not live drive telemetry. For alarm code 18 this raw word is A1L; for other alarm codes the same register has the standard alarm-log meaning documented by Ecoforest."
       },
       {
         "address": 5119,
-        "name": "Log: Brine return temperature",
+        "name": "Alarm record word 2 / inverter A1H",
         "rw": "R",
         "key": "log_brine_return_temperature",
-        "entity_type": "temperature",
-        "scale": 0.1,
-        "source": "Ecoforest Modbus 2023 v02, HP pp11-17"
+        "entity_type": "raw",
+        "scale": 1,
+        "source": "Ecoforest Modbus 2023 v02, HP pp11-17; EGW_v2.18 gama2 alarma_instalador.js",
+        "note": "Alarm-history snapshot, not live drive telemetry. For alarm code 18 this raw word is A1H; for other alarm codes the same register has the standard alarm-log meaning documented by Ecoforest."
       },
       {
         "address": 5120,
-        "name": "Log: HVAC supply temperature",
+        "name": "Alarm record word 3 / inverter A2L",
         "rw": "R",
         "key": "log_hvac_supply_temperature",
-        "entity_type": "temperature",
-        "scale": 0.1,
-        "source": "Ecoforest Modbus 2023 v02, HP pp11-17"
+        "entity_type": "raw",
+        "scale": 1,
+        "source": "Ecoforest Modbus 2023 v02, HP pp11-17; EGW_v2.18 gama2 alarma_instalador.js",
+        "note": "Alarm-history snapshot, not live drive telemetry. For alarm code 18 this raw word is A2L; for other alarm codes the same register has the standard alarm-log meaning documented by Ecoforest."
       },
       {
         "address": 5121,
-        "name": "Log: HVAC return temperature",
+        "name": "Alarm record word 4 / inverter A2H",
         "rw": "R",
         "key": "log_hvac_return_temperature",
-        "entity_type": "temperature",
-        "scale": 0.1,
-        "source": "Ecoforest Modbus 2023 v02, HP pp11-17"
+        "entity_type": "raw",
+        "scale": 1,
+        "source": "Ecoforest Modbus 2023 v02, HP pp11-17; EGW_v2.18 gama2 alarma_instalador.js",
+        "note": "Alarm-history snapshot, not live drive telemetry. For alarm code 18 this raw word is A2H; for other alarm codes the same register has the standard alarm-log meaning documented by Ecoforest."
       },
       {
         "address": 5122,
-        "name": "Log: Suction pressure",
+        "name": "Alarm record word 5 / inverter W1L",
         "rw": "R",
         "key": "log_suction_pressure",
-        "entity_type": "pressure",
-        "scale": 0.1,
-        "source": "Ecoforest Modbus 2023 v02, HP pp11-17"
+        "entity_type": "raw",
+        "scale": 1,
+        "source": "Ecoforest Modbus 2023 v02, HP pp11-17; EGW_v2.18 gama2 alarma_instalador.js",
+        "note": "Alarm-history snapshot, not live drive telemetry. For alarm code 18 this raw word is W1L; for other alarm codes the same register has the standard alarm-log meaning documented by Ecoforest."
       },
       {
         "address": 5123,
-        "name": "Log: Discharge pressure",
+        "name": "Alarm record word 6 / inverter W1H",
         "rw": "R",
         "key": "log_discharge_pressure",
-        "entity_type": "pressure",
-        "scale": 0.1,
-        "source": "Ecoforest Modbus 2023 v02, HP pp11-17"
+        "entity_type": "raw",
+        "scale": 1,
+        "source": "Ecoforest Modbus 2023 v02, HP pp11-17; EGW_v2.18 gama2 alarma_instalador.js",
+        "note": "Alarm-history snapshot, not live drive telemetry. For alarm code 18 this raw word is W1H; for other alarm codes the same register has the standard alarm-log meaning documented by Ecoforest."
       },
       {
         "address": 5124,
-        "name": "Log: Superheat",
+        "name": "Alarm record word 7 / inverter W2L",
         "rw": "R",
         "key": "log_superheat",
-        "entity_type": "measurement",
-        "scale": 0.1,
-        "source": "Ecoforest Modbus 2023 v02, HP pp11-17"
+        "entity_type": "raw",
+        "scale": 1,
+        "source": "Ecoforest Modbus 2023 v02, HP pp11-17; EGW_v2.18 gama2 alarma_instalador.js",
+        "note": "Alarm-history snapshot, not live drive telemetry. For alarm code 18 this raw word is W2L; for other alarm codes the same register has the standard alarm-log meaning documented by Ecoforest."
       },
       {
         "address": 5125,
-        "name": "Log: Valve opening %",
+        "name": "Alarm record word 8 / inverter W2H",
         "rw": "R",
         "key": "log_valve_opening",
-        "entity_type": "measurement",
-        "scale": 0.1,
-        "source": "Ecoforest Modbus 2023 v02, HP pp11-17"
+        "entity_type": "raw",
+        "scale": 1,
+        "source": "Ecoforest Modbus 2023 v02, HP pp11-17; EGW_v2.18 gama2 alarma_instalador.js",
+        "note": "Alarm-history snapshot, not live drive telemetry. For alarm code 18 this raw word is W2H; for other alarm codes the same register has the standard alarm-log meaning documented by Ecoforest."
       },
       {
         "address": 5126,
-        "name": "Log: Compressor RPM",
+        "name": "Alarm record word 9 / inverter EWL",
         "rw": "R",
         "key": "log_compressor_rpm",
-        "entity_type": "measurement",
+        "entity_type": "raw",
         "scale": 1,
-        "source": "Ecoforest Modbus 2023 v02, HP pp11-17"
+        "source": "Ecoforest Modbus 2023 v02, HP pp11-17; EGW_v2.18 gama2 alarma_instalador.js",
+        "note": "Alarm-history snapshot, not live drive telemetry. For alarm code 18 this raw word is EWL; for other alarm codes the same register has the standard alarm-log meaning documented by Ecoforest."
       },
       {
         "address": 5127,
-        "name": "Log: Operating state",
+        "name": "Alarm record word 10 / inverter SW",
         "rw": "R",
         "key": "log_operating_state",
-        "entity_type": "measurement",
+        "entity_type": "raw",
         "scale": 1,
-        "source": "Ecoforest Modbus 2023 v02, HP pp11-17"
+        "source": "Ecoforest Modbus 2023 v02, HP pp11-17; EGW_v2.18 gama2 alarma_instalador.js",
+        "note": "Alarm-history snapshot, not live drive telemetry. For alarm code 18 this raw word is SW; for other alarm codes the same register has the standard alarm-log meaning documented by Ecoforest."
       },
       {
         "address": 5128,
-        "name": "Log: Operating mode",
+        "name": "Alarm record word 11 / inverter DI",
         "rw": "R",
         "key": "log_operating_mode",
-        "entity_type": "measurement",
+        "entity_type": "raw",
         "scale": 1,
-        "source": "Ecoforest Modbus 2023 v02, HP pp11-17"
+        "source": "Ecoforest Modbus 2023 v02, HP pp11-17; EGW_v2.18 gama2 alarma_instalador.js",
+        "note": "Alarm-history snapshot, not live drive telemetry. For alarm code 18 this raw word is DI; for other alarm codes the same register has the standard alarm-log meaning documented by Ecoforest."
       },
       {
         "address": 5129,
@@ -4593,12 +4606,13 @@
       },
       {
         "address": 5130,
-        "name": "Log: Evaporation temperature",
+        "name": "Alarm record word 12 / inverter EWH",
         "rw": "R",
         "key": "log_evaporation_temperature",
-        "entity_type": "temperature",
-        "scale": 0.1,
-        "source": "Ecoforest Modbus 2023 v02, HP pp11-17"
+        "entity_type": "raw",
+        "scale": 1,
+        "source": "Ecoforest Modbus 2023 v02, HP pp11-17; EGW_v2.18 gama2 alarma_instalador.js",
+        "note": "Alarm-history snapshot, not live drive telemetry. For alarm code 18 this raw word is EWH; for other alarm codes the same register has the standard alarm-log meaning documented by Ecoforest."
       },
       {
         "address": 5131,

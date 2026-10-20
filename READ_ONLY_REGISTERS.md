@@ -35,6 +35,8 @@ probes (-999.9°C) become unavailable. Coils are exposed as numeric 0/1 sensors.
 
 - Heating adjustment 5072–5076 is an enum: 0..4 means -4,-2,0,+2,+4°C.
   It is separate from DT start (117), DT heating (141), and DT supply (65).
+- Registers 5003 and 5005 are live controller-commanded and inverter-reported compressor references, decoded from tenths of a percent. Comparing them with RPM helps distinguish a controller cap from inverter-side limiting.
+- Registers 5111–5130 hold the selected alarm-history record, not continuously live drive telemetry. For alarm code 18, the gateway renders 5118–5128 and 5130 as A1L/A1H, A2L/A2H, W1L/W1H, W2L/W2H, EWL, SW, DI and EWH. They are exposed as raw diagnostic words with stable existing entity keys; the record timestamp must be checked before treating them as a new fault.
 - Demand slots 5139–5142 decode the web client's demand list. They are not
   valve-position feedback or proof of uninterrupted service changeover.
 - Mode inputs 5085–5088 are raw inputs used jointly by the web status icons;
